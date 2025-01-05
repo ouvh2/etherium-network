@@ -35,12 +35,4 @@ EXPOSE 8545 30303
 # Initialize the Ethereum node with the genesis file (optional)
 
 # Set the default command to run the Ethereum node
-CMD ["/go/src/github.com/ethereum/go-ethereum/build/bin/geth", 
-     "--networkid", "1234", 
-     "--datadir", "/root/.ethereum", 
-     "--http", 
-     "--http.addr", "0.0.0.0", 
-     "--http.port", "8545", 
-     "--http.corsdomain", "*", 
-     "--http.api", "web3,eth,net,personal,miner", 
-     "--http.vhosts", "*"]
+CMD ["/go/src/github.com/ethereum/go-ethereum/build/bin/geth","--networkid", "1234", "--datadir", "/root/.ethereum", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.corsdomain", "*", "--http.api", "web3,eth,net,personal,miner", "--http.vhosts", "*"]

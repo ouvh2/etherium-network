@@ -23,7 +23,7 @@ RUN echo "GOROOT is $GOROOT" && \
 # Install Go Ethereum (Geth)
 RUN git clone https://github.com/ethereum/go-ethereum.git /go/src/github.com/ethereum/go-ethereum 
 RUN cd /go/src/github.com/ethereum/go-ethereum 
-#RUN make all
+RUN make geth
 
 # Set up the working directory
 WORKDIR /root

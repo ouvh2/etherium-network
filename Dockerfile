@@ -1,5 +1,5 @@
 # Use the official Ethereum Geth image from Docker Hub
-FROM ethereum/client-go:latest
+FROM augurproject/go-ethereum:latest
 
 # Expose RPC and P2P ports
 EXPOSE 8545 30303 30303

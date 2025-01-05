@@ -6,4 +6,4 @@ EXPOSE 8545 30303 30303
 
 # Configure entrypoint for Ethereum node
 COPY genesis.json /genesis.json
-CMD ["--networkid", "1234", "--datadir", "/root/.ethereum", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "web3,eth,net,personal,miner"]
+CMD ["geth", "--networkid", "1234", "--datadir", "/root/.ethereum", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "web3,eth,net,personal,miner", "--http.corsdomain", "*"]

@@ -10,9 +10,9 @@ RUN apk add --no-cache \
     go
 
 # Set the Go environment variables
-ENV GOPATH /go
-ENV GOROOT /usr/local/go
-ENV PATH $GOROOT/bin:$GOPATH/bin:$PATH
+ENV GOPATH=/go
+ENV GOROOT=/usr/local/go
+ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Install Go Ethereum (Geth)
 RUN git clone https://github.com/ethereum/go-ethereum.git /go/src/github.com/ethereum/go-ethereum \

@@ -14,6 +14,10 @@ ENV GOPATH=/go
 ENV GOROOT=/usr/local/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
+RUN echo "GOROOT is $GOROOT" && \
+    echo "GOPATH is $GOPATH" && \
+    echo "PATH is $PATH"
+
 # Install Go Ethereum (Geth)
 RUN git clone https://github.com/ethereum/go-ethereum.git /go/src/github.com/ethereum/go-ethereum \
     && cd /go/src/github.com/ethereum/go-ethereum \

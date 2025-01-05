@@ -7,21 +7,23 @@ RUN apk add --no-cache \
     curl \
     git \
     build-base \
+    linux-headers \
     go
 
 # Set the Go environment variables
 ENV GOPATH=/go
-ENV GOROOT=/usr/local/go
+ENV GOROOT=/usr/lib/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 RUN echo "GOROOT is $GOROOT" && \
     echo "GOPATH is $GOPATH" && \
     echo "PATH is $PATH"
 
+
 # Install Go Ethereum (Geth)
-RUN git clone https://github.com/ethereum/go-ethereum.git /go/src/github.com/ethereum/go-ethereum \
-    && cd /go/src/github.com/ethereum/go-ethereum \
-    && make geth
+RUN git clone https://github.com/ethereum/go-ethereum.git /go/src/github.com/ethereum/go-ethereum 
+RUN cd /go/src/github.com/ethereum/go-ethereum 
+#RUN make all
 
 # Set up the working directory
 WORKDIR /root
